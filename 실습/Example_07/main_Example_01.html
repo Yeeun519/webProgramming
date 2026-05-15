@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 2px solid yellowgreen;
+            color:blue; /*텍스트 컬러*/
+            background : aliceblue;
+        }
+        span{
+            border: 3px dotted red;
+            background: yellow;
+        } /*인라인은 박스안의 글자 여백 크기를 알아서 정해주는,,,?*/
+    </style>
+</head>
+<body>
+    <h3>인라인, 인라인 블록, 블록</h3>
+    <hr>
+    나는 <div style="display:none">
+        태그</div>입니다.<br><br>
+    나는 <div style="display:inline">
+        인라인</div>입니다.<br><br>  
+    나는 <div style="display:inline-block; height:50px">
+        div(inline-block)</div>입니다.<br><br>
+    나는 <div><span style="display:block"> 
+        span(block)</span></div> 
+
+</body>
+</html>

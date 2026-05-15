@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 꾸미기</title>
+    <style>
+        div{
+            background-color : skyblue;
+            background-size : 100px 100px;
+            background-image : url("Images/spongebob.jpg");
+            background-repeat: no-repeat;/*repeat-y하면 두개연속 세로로,,*/
+            background-position: center center;
+        }
+        div{
+            width : 200px;
+            height : 200px;
+            color : blueviolet;
+            font-size : 16px;
+        }
+        div.redText{text-shadow:3px 3px red; }
+    </style>
+</head>
+<body>
+    <h3>div 박스에 배경 꾸미기</h3>
+    <div class="redText">SpongeBob is an over-optimistic
+        sponge that annoys other characters.</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>셀렉터 만들기</title>
+    <style>
+        h3, li{/*태그 이름 셀렉터*/color : brown;}
+        div > div > strong {/*자식 셀렉터*/ background : yellow;}
+        ul strong {/* 자손 셀렉터 그냥 얘는 테그 ul로!->닫혀있는 li안에 있기때문에 >표시 없이
+            그냥 태그로 ul만 지정해주면 색이 바뀜!!*/ 
+            color : dodgerblue;} 
+        .warning {/*class 셀렉터->class는 큰영역묶는*/ color : red;}
+        body.main {/*class 셀렉터*/ background : rgb(169, 211, 249);}
+        #list {/* id(#으로 부름) 셀렉터->id는 작은영역 묶는*/ background: mistyrose;}
+        #list span{/*자손 셀렉터*/ color : forestgreen;}
+        h3:first-letter {/*가상 클래스 셀렉터*/ color : red;}
+        li:hover {/*가상 클래스 셀렉터*/ background : yellowgreen;}
+    </style>
+</head>
+<body class="main">
+    <h3>Web programming</h3>
+    <hr>
+     <div>
+        <div>2학기 <strong>학습내용</strong></div>
+        <ul id="list">
+            <li><span>HTML5</span></li>
+            <li><strong>CSS</strong></li>
+            <li>JAVASCRIPT</li>
+        </ul>
+        <div class="warning">60점 이하는 F!</div>
+     </div>
+</body>
+</html>
