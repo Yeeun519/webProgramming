@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>더바른교정치과</title>
+    <style>
+         html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
+        }
+        body {
+            font-family: 맑은고딕;
+            display:contents;
+            align-items: center; 
+            background-color: #efeff3;
+            overflow-x: hidden; 
+        }
+        header {
+            width:100%;
+            height:25px;
+            background-color: #2e5283; 
+            
+        }
+        nav{
+            width:100%;
+            height:50px;
+            background-color: white;
+            
+        }
+        
+        #logo{
+            width: 200px;
+            position: relative;
+            display: flex; 
+            justify-content: center; 
+            margin: auto;
+            
+        }
+        #login{
+           
+            justify-content:right;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            padding: 3px;
+            margin-right: 20px;
+            color: white; 
+
+        }
+        #menu {
+            background-color: white;
+            width: 100vw;
+            position: relative;
+            color: black;
+            margin-top: 10px;
+            text-align: center;
+            z-index: 10;
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+        .menu_a{
+            font-weight: bold;
+        }
+
+        #menu>#menu_bar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            
+        }
+
+        #menu>#menu_bar>.menu_li:hover .sub_menu {
+            max-height: 100vh;
+        }
+
+        .sub_menu {
+            opacity: 0; 
+            visibility: hidden; 
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%; 
+            left: 0;
+            width: 100%;
+            background-color:#2e5283; 
+            color:white;
+            transition: opacity 0.3s ease, visibility 0.3s ease; 
+            z-index: 10;
+            list-style: none;
+            font-size: 15px;
+            justify-content: center;
+            text-align: center;
+            padding: 0;
+        }
+
+        .menu_li:hover .sub_menu {
+            opacity: 1; 
+            visibility: visible;
+            padding: 10px 0; 
+        }
+
+        #menu_bar {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu_li {
+            font-size:18px;
+            margin: 0 60px;
+            position: relative; 
+            margin-bottom: 4px;
+            text-align: center;
+            
+        }
+
+        .menu_a {
+            text-decoration: none;
+            color:black;
+            padding: 20px;
+            display: block;
+        }
+
+        .menu_li:hover .menu_a {
+            background-color: #f0f0f0; 
+        }
+        .slider {
+            position: relative;
+            margin-top: 40px;
+            overflow: hidden; 
+            width: 100%; 
+            height: 500px;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            animation: slider 7.5s infinite linear;
+        }
+
+        .slide:nth-child(1) {
+            background-image: url(Images/main_visual1.jpg);
+            animation-delay: 0;
+            
+        }
+        .slide:nth-child(2) {
+            background-image: url(Images/main_visual.png);
+            animation-delay: -5s;
+            
+        }
+        .slide:nth-child(3) {
+
+            background-image: url(Images/main_visual2.png);
+            animation-delay: -2.5s;
+        }
+
+            @keyframes slider {
+            0% {
+                transform: translateX(0);
+            }
+
+            26% {
+                transform: translateX(0);
+            }
+            33% {
+                transform: translateX(-100%);
+                animation-timing-function: step-end;
+            }
+            93% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+        .box-container {
+            display: flex; 
+            justify-content: center; 
+            gap: 25px; 
+            flex-wrap: wrap;
+        }
+        .box {
+            width:258px;
+            height: 220px;
+            background-color: white;
+            display: flex;
+            margin-top: 20px;
+            border: 2px solid rgb(222, 227, 234);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.2s; 
+            text-decoration: none;
+            color:black;
+            
+        }
+
+        .box:hover {
+            background-color: #2e518351;
+            transform: scale(1.05);
+        }
+
+        #box_li {
+            list-style: none;
+            margin-left: -40px;
+        }
+        .mid_f{
+            text-align: center;
+            padding: 90px;
+            font-size: 23px;
+            line-height: 20px;
+            
+        }
+        #mid {
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: center;
+        gap: 15px; 
+        }
+
+        .mid_box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 27%;
+            padding: 10px; 
+            border-radius: 5px;
+            background-color:white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .mid_box.reverse {
+            flex-direction:column-reverse;
+        }
+
+        .mid_img {
+            flex: 1;
+            max-width: 200px; 
+            margin: 5px;
+        }
+
+        .mid_text {
+            flex: 2;
+            text-align: left;
+            padding:5px; 
+        }
+
+        .mid_text h3 {
+            font-size: 20px; 
+            font-weight: bold;
+            margin-bottom: 5px; 
+        }
+
+        .mid_text h3 span {
+            color: #2e5283;
+        }
+
+        .mid_text p {
+            font-size: 16px; 
+            margin: 0;
+        }
+        #process {
+            padding: 20px;
+            margin-top: 70px;
+            background-color: #ffffff;
+        }
+
+        .container {
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+        .section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .section img {
+            width: auto; /* 비율 유지 */
+            max-width: 300px; /* 최대 너비 300px로 제한 */
+            height: auto; /* 이미지 비율 유지 */
+            border-radius: 10px;
+            
+        }
+        .text-content {
+            flex: 1; /* 텍스트 영역이 나머지 공간 차지 */
+        }
+        
+        .text-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .text-content p {
+            color: black;
+            font-size: 16px;
+            line-height: 1.3;
+        }
+        #testimonials {
+        padding: 20px;
+        background-color: #f9f9f9;
+        }
+        .testimonials-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            margin-top:180px;
+            overflow: hidden; 
+            width: 100%; 
+            height: 370px;
+        }
+        .testimonial {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 20%;
+        }
+        .testimonial img {
+            
+            margin-bottom: 10px;
+        }
+        .info-section {
+            background-color: #2e5183;
+            height: 150px; 
+            color: white;
+            padding: 20px; 
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px; 
+            align-items: center; 
+            text-align: left;
+        }
+
+        .info-section div {
+            background-color: #2e5183;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 15px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            height: auto; 
+        }
+
+        .info-section h2 {
+            font-size: 18px; 
+            margin-bottom: 10px;
+            color: #c383b0;
+        }
+
+        .info-section p {
+            font-size: 14px; 
+            line-height: 1.4;
+            margin: 0;
+        }   
+        #footer{
+            background-color: #333;
+        }
+        #table{
+            background-color:white;
+            width: 100%;
+            position: relative;
+            color: black;
+            margin-top: 10px;
+            text-align: center;
+            z-index: 10;
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div>
+            <ul id="login">
+                <li>로그인&nbsp;&nbsp;</li>
+                <li>&nbsp;&nbsp;회원가입&nbsp;&nbsp;</li>
+                <li>&nbsp;&nbsp;더바른 special&nbsp;&nbsp;</li>
+                <li>&nbsp;&nbsp;진료안내</li>
+            </ul>
+        </div>
+    </header>
+    <nav id="nv">
+        <div id="logo">
+            <img src="Images/logo.png" width="350px">
+        </div>
+        <div id="menu">
+            <ul id="menu_bar">
+                <li class="menu_li">
+                <a href="#" class="menu_a">치과소개</a>
+                <ul class="sub_menu">
+                    <li>의료진 소개</li><br>
+                    <li>병원 둘러보기</li><br>
+                    <li>오시는 길</li>
+                    </ul>
+                </li>
+                <li class="menu_li">
+                <a href="#" class="menu_a">교정치료</a>
+                <ul class="sub_menu">
+                    <li><a href="main04.html" target="_self" style="color: white; text-decoration: none;">급속/단기교정</a></li><br>
+                    <li>앞니/덧니교정</li><br>
+                    <li>아이교정</li><br>
+                    <li>중년교정</li><br>
+                    <li>재교정</li>
+                </ul>
+                </li>
+                <li class="menu_li">
+                <a href="#" class="menu_a">일반 치료</a>
+                <ul class="sub_menu">
+                    <li>임플란트</li><br>
+                    <li>치아미백</li><br>
+                    <li>심미치료</li><br>
+                    <li>턱관절치료</li><br>
+                    <li>일반치료</li>
+                </ul>
+                </li>
+                <li class="menu_li">
+                <a href="#" class="menu_a">상담/커뮤니티</a>
+                <ul class="sub_menu">
+                    <li>온라인상담</li><br>
+                    <li>카톡상담</li><br>
+                    <li>공지사항</li><br>
+                </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section>
+        <div class="slider">
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            </div>
+        <div class="box-container">
+            <a href="main03.html" class="box" style="color: black; text-decoration: none;">
+                <ul id="box_li">
+                    <li><img src="Images/special.png" width="100px"></li>
+                    <li>더바른 Special</li>
+                </ul>
+            </a>
+            <a class="box">
+                <ul id="box_li">
+                    <li><img src="Images/annae.png" width="120px"></li>
+                    <li>진료안내</li>
+                </ul>
+            </a>
+            <a class="box">
+                <ul id="box_li">
+                    <li><img src="Images/sangdam.png" width="120px"  height="90px"></li>
+                    <li>상담신청</li>
+                </ul>
+            </a>
+            <a href="main02.html" class="box" style="color: black; text-decoration: none;">
+                <ul id="box_li">
+                    <li><img src="Images/blog.png" width="100px"></li>
+                    <li>자주 하시는 질문</li>
+                </ul>
+            </a>
+            <a href="sangdam.html" class="box">
+                <ul id="box_li">
+                    <li><img src="Images/instargram.png" width="110px"></li>
+                    <li>instargram</li>
+                </ul>
+            </a>
+        </div>
+    </section>
+    <section>
+        <div class="mid_f">
+            <h3  style="font-weight: bold; color:#c383b0;">더바른만의 특별함으로<br/></h3>
+            <p color:black>&nbsp;&nbsp;차별화된 진료를 제공합니다.</p>
+        </div>
+        <div id="mid">
+            <div class="mid_box reverse">
+                <img src="Images/digital.png"  class="mid_img">
+                <div class="mid_text">
+                    <h3 style="font-size: 20px; font-weight: bold;"><span style="color:#2e5183;">3D장비 활용</span></h3>
+                    <p style="font-size: 18px;">3D장비를 통해 단계적이고 철저한 정밀 진단이 이루어집니다.</p>
+                </div>
+            </div>
+            <div class="mid_box reverse">
+                <img src="Images/mid4.png" class="mid_img">
+                <div class="mid_text">
+                    <h3 style="font-size: 20px; font-weight: bold;"><span style="color:#2e5183;">당일 시작 프로그램</span></h3>
+                    <p style="font-size: 18px;">교정 시간 단축을 위해 단 한번의 내원으로 교정치료가 가능합니다.</p>
+                </div>
+                
+            </div>
+            <div class="mid_box reverse">
+                <img src="Images/mid5.png"  class="mid_img">
+                <div class="mid_text">
+                    <h3 style="font-size: 20px; font-weight: bold;"><span style="color:#2e5183;">꼼꼼한 사후 관리</span></h3>
+                    <p style="font-size: 18px;">교정 이후 단계적인 관리와 유지 장치등 체계적인 사후 관리까지 보장합니다.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mid_f">
+            <h3  style="font-weight: bold; color:#c383b0;">&nbsp;더바른만의 "개인 맞춤화 서비스"로 <br/></h3>
+            <p color:black>&nbsp;&nbsp;세심하고 정성스러운 서비스를 약속드립니다.</p>
+        </div>
+        <div id="mid">
+            <div class="mid_box reverse">
+                <img src="Images/mid1.png"  class="mid_img">
+                <div class="mid_text">
+                    <h3 style="font-size: 20px; font-weight: bold;"><span style="color:#2e5183;">다양한 교정:치료부터 미관까지</span></h3>
+                    <p style="font-size: 18px; font-weight: bold;">교정프로그램:8개, 증상별 프로그램:13개,장치종류:7개가 존재합니다.</p>
+                </div>
+            </div>
+            <div class="mid_box reverse">
+                <img src="Images/mid2.png" class="mid_img">
+                <div class="mid_text">
+                    <h3 style="font-size: 20px; font-weight: bold;"><span style="color: #3c63bd;">커스텀 분납제도</span></h3>
+                    <p style="font-size: 18px;">환자분과의 충분한 상의와 함께 원하시는 분납제도를 제공합니다.</p>
+                </div>
+                
+            </div>
+            <div class="mid_box reverse">
+                <img src="Images/mid3.png"  class="mid_img">
+                <div class="mid_text">
+                    <h3 style="font-size: 20px; font-weight: bold;"><span style="color: #3c63bd;">맞춤형 1:1치료</span></h3>
+                    <p style="font-size: 18px;">환자분의 상태, 적응력, 생활, 일정등에 맞게 맞춤형으로 진행됩니다.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+        </div>
+        <div class="testimonials-container" style="position: relative; text-align: center;">
+            <div class="testimonial">
+                <img src="Images2/slide.png" style="width: 100%; height: auto;">
+            </div>
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #3c63bd; padding: 10px; border-radius: 5px; background-color: rgba(255, 255, 255, 0.8);">
+                <h3>치료 후기</h3>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                    <div style="flex: 1 1 45%; max-width: 45%; text-align: left;">
+                        <p>“3D 사진으로 교정 전후를 예상할 수 있는 점이 매우 와닿았고 매우 빠르게 진료가 순조롭게
+                            진행되어서 만족스러웠어요!”</p>
+                        <p><strong>- 오** 님</strong></p>
+                    </div>
+                    <div style="flex: 1 1 45%; max-width: 45%; text-align: left;">
+                        <p>“개인맞춤형이어서 불편하고 귀찮음 없이 너무 좋고 치료가 편안했어요. 교정 결과도 맘에 쏙 들어요”</p>
+                        <p><strong>- 이** 님</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="process">
+        <h2 style="font-size:28px;font-weight: bold; color: #c383b0; text-align: center;">치료는 이렇게 진행됩니다!!<br/></h2>
+        <div class="container">
+            <div class="section">
+                <img src="Images/process1.jpeg" width="300px">
+                <div class="text-content">
+                    <h3 style="font-size: 23px; font-weight: bold; color:#2e5283"><span>1. 초기 상담</span></h3>
+                    <p style="font-size: 18px;">환자분의 치아 상태, 원하는 방향성, 치료 목적 등을 확인하고 소통합니다.</p>
+                    <p style="font-size: 18px;">환자분의 기대와 현재 치아 문제를 파악한 후, 교정장치, 교정 계획, 프로그램을 결정합니다.</p>
+                </div>
+            </div>
+            <div class="section">
+                <img src="Images/process2.png" width="300px">
+                <img src="Images/process2-1.png" width="400px" height="150px">
+                <div class="text-content">
+                    <h3 style="font-size: 23px; font-weight: bold; color:#2e5283">2. 3D 정밀 진단</h3>
+                    <p style="font-size: 18px;">3D 장비와 가상 시뮬레이션 장치를 통해 교정 전후의 모습을 파악하고,
+                        환자 분의 치아 상태를 면밀히 진단하여 적합한 장치 및 교정 프로그램을 결정합니다.
+                    <p style="font-size: 18px;">정확한 데이터를 통해 환자 맞춤형 진료를 계획하고, 치료 중 예상되는 문제와 해결 방안을 미리 검토합니다.</p>
+                </div>
+            </div>
+            <div class="section">
+                <img src="Images/process3.png" width="300px">
+                <div class="text-content">
+                    <h3 style="font-size: 23px; font-weight: bold; color:#2e5283">3. 치료 시작</h3>
+                    <p style="font-size: 18px;">결정된 교정을 진행하기 위해 필요한 준비 진료를 완료한 후, 단계적 절차에 따라 주기적인 점검과 진료를 진행합니다.</p>
+                    <p style="font-size: 18px;">환자분의 상태를 지속적으로 확인하며, 치료 경과에 따라 필요한 조정 작업을 수행합니다.</p>
+                    <p style="font-size: 18px;">이 과정에서 환자분과 지속적인 소통이 교정의 성공에 중요한 역할을 합니다.</p>
+                </div>
+            </div>
+            <div class="section">
+                <img src="Images/process4.jpg" width="300px">
+                <div class="text-content">
+                    <h3 style="font-size: 23px; font-weight: bold; color:#2e5283">4. 유지 관리</h3>
+                    <p style="font-size: 18px;">교정이 완료된 후에도 주기적인 관리와 유지장치 착용 안내를 통해, 교정된 상태를 꾸준히 유지하도록 돕습니다.</p>
+                    <p style="font-size: 18px;">필요 시 추가적인 점검 및 조치를 제공하며, 환자가 올바른 구강 위생을 유지할 수 있도록 상세한 가이드를 제공합니다.</p>
+                    <p style="font-size: 18px;">유지 관리는 치료의 마지막 단계이지만, 환자의 만족스러운 결과를 오랫동안 유지하기 위해 매우 중요한 과정입니다.</p>
+                </div>
+            </div>
+    </section>
+        <div class="info-section">
+            <div class="reservation">
+                <h2>예약 안내</h2>
+                <p>압구정스마일치과는 환자분의 쾌적하고 편안한 진료를 위하여 철저한 준비로 환자분의 질환을 공부하고 준비합니다.</p>
+                <p>집중된 의료서비스를 제공할 수 있도록 예약제를 진행합니다.</p>
+            </div>
+            <div class="customer-center">
+                <img src="Images/phone.png" width="100px">
+                <h2>전화상담</h2>
+                <p class="phone-number">02-919-2828</p>
+                
+            </div>
+            <div class="schedule">
+                <h2>진료시간</h2>
+                <p><span class="highlight">[평일 진료]</span> 화수금: 오전 10:00 - 오후 07:00</p>
+                <p><span class="highlight">[평일 야간 진료]</span> 오전 10:00 - 오후 09:00</p>
+                <p><span class="highlight">[토요일]</span> 오전 09:30 - 오후 02:30</p>
+                <p>* 점심시간: 오후 1시 ~ 오후 2시</p>
+                <p>* 토요일은 점심시간 없이 진료합니다.</p>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <table id="table">
+            <tr><th><img src="Images/footer_img1.png" width="600px"></th>
+                <th><img src="Images/footer_img2.png"width="700px"></th>
+            </tr>
+           
+        </table>
+    </footer>
+</body>
+</html>

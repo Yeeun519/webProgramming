@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>더바른 Special</title>
+</head>
+<style>
+    html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
+        }
+        body {
+            font-family: 맑은고딕; 
+            display:contents;
+            align-items: center; 
+            background-color: #efeff3;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
+        }
+        header {
+            width:100%;
+            height:25px;
+            background-color: #2e5183;
+            
+        }
+        nav{
+            width:100%;
+            height:50px;
+            background-color: white;
+            
+        }
+        
+        #logo{
+            width: 200px;
+            position: relative;
+            display: flex; 
+            justify-content: center; 
+            margin: auto;
+            
+        }
+        #login{
+           
+            justify-content:right;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            padding: 3px;
+            margin-right: 20px;
+            color: white; 
+
+        }
+        #menu {
+            background-color: white;
+            width: 100vw;
+            position: relative;
+            color: black;
+            margin-top: 10px;
+            text-align: center;
+            z-index: 10;
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+        .menu_a{
+            font-weight: bold;
+        }
+        #menu>#menu_bar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            
+        }
+
+        #menu>#menu_bar>.menu_li:hover .sub_menu {
+            max-height: 100vh;
+        }
+
+        .sub_menu {
+            opacity: 0; 
+            visibility: hidden; 
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%; 
+            left: 0;
+            width: 100%;
+            background-color: #2e5283; 
+            color: white;
+            transition: opacity 0.3s ease, visibility 0.3s ease; 
+            z-index: 10;
+            list-style: none;
+            font-size: 15px;
+            justify-content: center;
+            text-align: center;
+            padding: 0;
+        }
+
+        .menu_li:hover .sub_menu {
+            opacity: 1; 
+            visibility: visible; 
+            padding: 10px 0;
+        }
+
+        #menu_bar {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu_li {
+            font-size:18px;
+            margin: 0 60px;
+            position: relative;
+            margin-bottom: 4px;
+            text-align: center;
+            
+        }
+
+        .menu_a {
+            text-decoration: none;
+            color: #333;
+            padding: 20px;
+            display: block;
+        }
+        .menu_li:hover .menu_a {
+            background-color: #f0f0f0; 
+        }
+        .slider {
+            position: relative;
+            margin-top: 40px;
+            overflow: hidden; 
+            width: 100%; 
+            height: 400px;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 20%;
+           
+        }
+        #doctors {
+            padding: 40px;
+            background-color: #f9f9f9;
+            margin-top: 50px; 
+            margin-bottom: 30px;
+        }
+        .doctor-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 30px;
+        }
+        .doctor-card {
+            display: flex;
+            text-align:left;
+            padding: 20px;
+            border: 1px solid rgb(222, 227, 234);
+            border-radius: 10px;
+            background-color: white;
+            width: 70%;
+        }
+        .doctor-img {
+            margin-right: 20px;
+            margin-bottom: 10px;
+            padding:30px;
+        }
+        .doctor-info{
+            display: flex;
+            flex-direction: column
+        }
+        .container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 30px;
+            margin-left:5%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            grid-gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .container:last-child {
+            grid-template-columns: repeat(2, 1fr); 
+            max-width: 800px;
+            margin-left: 280px;
+            width: 100%;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            padding-top: 75%; /* 4:3 비율 */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+            filter: blur(15px);
+        }
+
+        .text-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+        }
+
+        .card:hover .text-content {
+            opacity: 1; 
+        }
+
+        .text-content h3 {
+            font-size: 22px;
+            margin: 0 0 10px;
+            
+        }
+
+        .text-content p {
+            font-size: 16px;
+            line-height: 1.4;
+            
+        }
+        .info-section {
+            background-color: #2e5183;
+            height: 150px;
+            color: white;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px; 
+            align-items: center; 
+            text-align: left;
+        }
+
+        .info-section div {
+            background-color: #2e5183;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 15px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            height: auto; 
+        }
+
+        .info-section h2 {
+            font-size: 18px; 
+            margin-bottom: 10px;
+            color: #c383b0;
+        }
+
+        .info-section p {
+            font-size: 14px; 
+            line-height: 1.4; 
+            margin: 0;
+        }
+        #footer{
+            background-color: #333;
+        }
+        #table{
+            background-color:white;
+            width: 100%;
+            position: relative;
+            color: black;
+            margin-top: 10px;
+            text-align: center;
+            z-index: 10;
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+</style>
+<body>
+    <header>
+        <div>
+            <ul id="login">
+                <li>로그인&nbsp;&nbsp;</li>
+                <li>&nbsp;&nbsp;회원가입&nbsp;&nbsp;</li>
+                <li>&nbsp;&nbsp;더바른 special&nbsp;&nbsp;</li>
+                <li>&nbsp;&nbsp;진료안내</li>
+            </ul>
+        </div>
+    </header>
+    <nav id="nv">
+        <div id="logo">
+            <a href="main01.html" target="_self" style="color: white; text-decoration: none;">
+                <img src="Images/logo.png" width="350px"></a>
+        </div>
+        <div id="menu">
+            <ul id="menu_bar">
+                <li class="menu_li">
+                <a href="#" class="menu_a">치과소개</a>
+                <ul class="sub_menu">
+                    <li>의료진 소개</li><br>
+                    <li>병원 둘러보기</li><br>
+                    <li>오시는 길</li>
+                    </ul>
+                </li>
+                <li class="menu_li">
+                <a href="#" class="menu_a">교정치료</a>
+                <ul class="sub_menu">
+                    <li>급속/단기교정</li><br>
+                    <li>앞니/덧니교정</li><br>
+                    <li>아이교정</li><br>
+                    <li>중년교정</li><br>
+                    <li>재교정</li>
+                </ul>
+                </li>
+                <li class="menu_li">
+                <a href="#" class="menu_a">일반 치료</a>
+                <ul class="sub_menu">
+                    <li>임플란트</li><br>
+                    <li>치아미백</li><br>
+                    <li>심미치료</li><br>
+                    <li>턱관절치료</li><br>
+                    <li>일반치료</li>
+                </ul>
+                </li>
+                <li class="menu_li">
+                <a href="#" class="menu_a">상담/커뮤니티</a>
+                <ul class="sub_menu">
+                    <li>온라인상담</li><br>
+                    <li>카톡상담</li><br>
+                    <li>공지사항</li><br>
+                </ul>
+            </ul>
+        </div>
+    </nav>
+    <section>
+        <div class="slider" style="position: relative; text-align: center;">
+            <div class="slide">
+                <img src="Images3/slider.jpg" style="width: 100%; height: auto;">
+            </div>
+            <h2 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+            color:#2e5183; font-size:25px; padding: 10px; border-radius: 5px;">
+                차원이 다른 "더바른"만의 Special함으로 <br> 정성껏 진료합니다.
+            </h2>
+        </div>
+        <div class="container">
+            <div class="card">
+                <img src="Images3/bogun.png" alt="보건복지부">
+                <div class="text-content">
+                    <h3>보건복지부가<br>인증한 의료진</h3>
+                    <p>보건복지부가 인증한 지정 수련병원에서 과정을 이수하고 치과전문의 시험에 합격한 의료진입니다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Images3/guarantee.png" alt="보증제도">
+                <div class="text-content">
+                    <h3>고른치열<br>보증제도</h3>
+                    <p>교정 후에도 아름다운 치아와 잇몸을 평생동안 관리하기 위한 보증제도를 실시합니다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Images3/doctor.png" alt="주 6일">
+                <div class="text-content">
+                    <h3>"주6일"<br>대표원장의<br>교정진료</h3>
+                    <p>환자분의 일정에 의료진이 맞추며, 주치의가 처음부터 끝까지 책임집니다.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card">
+                <img src="Images3/3D.png" alt="3D장비">
+                <div class="text-content">
+                    <h3>3D 초정밀 분석</h3>
+                    <p>3D 장비로 교정 전후 예측분석, 변화과정 예측이 가능합니다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Images3/clean.jpg" ;alt="5단계 위생 시스템">
+                <div class="text-content">
+                    <h3>철저한 5단계<br>위생 시스템</h3>
+                    <p>1인 1기구 사용 원칙으로 멸균된 기구만을 사용하며 위생적인 환경에서 진료합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+    <div class="info-section">
+        <div class="reservation">
+            <h2>예약 안내</h2>
+            <p>압구정스마일치과는 환자분의 쾌적하고 편안한 진료를 위하여 철저한 준비로 환자분의 질환을 공부하고 준비합니다.</p>
+            <p>집중된 의료서비스를 제공할 수 있도록 예약제 진행합니다.</p>
+        </div>
+        <div class="customer-center">
+            <img src="Images/phone.png" width="100px">
+            <h2>전화상담</h2>
+            <p class="phone-number">02-919-2828</p>
+            
+        </div>
+        <div class="schedule">
+            <h2>진료시간</h2>
+            <p><span class="highlight">[평일 진료]</span> 화수금: 오전 10:00 - 오후 07:00</p>
+            <p><span class="highlight">[평일 야간 진료]</span> 오전 10:00 - 오후 09:00</p>
+            <p><span class="highlight">[토요일]</span> 오전 09:30 - 오후 02:30</p>
+            <p>* 점심시간: 오후 1시 ~ 오후 2시</p>
+            <p>* 토요일은 점심시간 없이 진료합니다.</p>
+        </div>
+    </div>
+    </section>
+    <footer id="footer">
+    <table id="table">
+        <tr><th><img src="Images/footer_img1.png" width="600px"></th>
+            <th><img src="Images/footer_img2.png"width="700px"></th>
+        </tr>
+    
+    </table>
+    </footer>
+</body>
+</html>
