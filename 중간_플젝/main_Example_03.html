@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobby</title>
+    <style>
+        body{
+            background: rgb(194, 206, 211);
+        }
+        #frame{width: 600px;}
+        .blurEffect {
+            text-shadow : 3px 3px 5px rgb(15, 196, 236);
+        }
+        header{
+            position: relative;
+            top: 40px;
+            left: 80px;
+        }
+        section{
+            width:90%;
+            height:1100px;
+            margin-left: 70px;
+            margin-top: 40px;
+            background-color: aliceblue;
+        }
+        #round1 {border-radius : 30px;}
+        section article{
+            position: relative;
+            top:50px;
+            left:20px;
+            float: left;
+            width:270px;
+            height:350px;
+            margin: 5px;
+            padding: 10px;
+            background-color: rgb(223, 235, 247);
+            border: 1px dotted rgb(120, 120, 120);
+            border-radius: 10px;
+            text-align: center;
+        }
+        #label1{
+            position: relative;
+            top:70px;
+            left:50px;
+            width:270px;
+            height:370px;
+            margin: 5px;
+            padding: 10px;
+            float:left; 
+        }
+        #label2{
+            position: relative;
+            top:140px;
+            width:270px;
+            height:370px;
+            margin: 5px;
+            padding: 10px;
+            text-align: center;
+            float:left; 
+        }
+        #table1{
+            position: relative;
+            top:150px;
+            right:-100px;
+        }
+        aside{
+            position: relative;
+            left: 1350px;
+            bottom:1070px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="blurEffect">Hobby</h1>
+
+    </header>
+    <section id="round1">
+        <article class="alt1">
+            <h2>NetFilx</h2>
+            <p>
+                <img src="Images/netflix.jpg" width="250">
+            </p>
+        </article>
+        <article class="alt2">
+            <h2>YouTube</h2>
+            <p>
+                <img src="Images/youtube.jpg" width="250" height="280">
+            </p>
+        </article>
+        <article class="alt3">
+            <h2>BaseBall</h2>
+            <p>
+                <img src="Images/baseball.jpg" width="250">
+            </p>
+        </article>
+        <article class="alt4">
+            <h2>FootBall</h2>
+            <p>
+                <video src="Media/football.mp4" width="250" height="280" controls>
+            </p>
+        </article>
+        <footer>
+            <form id="label1">
+                <h3>흑백요리사 중 가장 먹어보고싶은 음식은?</h3>
+                <label>
+                    <input type="radio" name="food" value="1">
+                    마라크림 새우딤섬 <img src="Images/label1.jpg" width="160">
+                </label><br>
+                <label>
+                    <input type="radio" name="food" value="2" checked>
+                    밤티라미수 <img src="Images/label2.jpg" width="160">
+                </label><br>
+            </form>
+            <form id="label2">
+                <label>
+                    <input type="radio" name="food" value="3">
+                    감태두부 비빔국수 <img src="Images/label3.jpg" width="150">
+                </label><br>
+                <label>
+                    <input type="radio" name="food" value="4">
+                    나머지 떡볶이 디저트 <img src="Images/label4.jpg" width="150">
+                </label>
+            </form>
+            <div>
+                <table id="table1">
+                    <thead>
+                        <tr>
+                            <th style="font-family: Go Go Sports,serif; font-size:150px">M</th>
+                            <th><img src="Images/kia.png" width="200"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-family: Go Go Sports,serif; font-size:150px">r</td>
+                            <td>&nbsp;&nbsp;&nbsp;<img src="Images/tottenham.png" width="170" height="170"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </footer>
+    </section>
+    <aside>
+        <form>
+         <button type="button">
+             <a href="main_Example_01.html" target="_blank"><img src="Images/button.png" width="40"></a>
+             </button>
+        </form>
+     </aside>
+</body>
+</html>

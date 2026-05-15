@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation</title>
+    <style>
+         body{background: rgb(194, 206, 211);}
+        header{
+            position: relative;
+            top: 40px;
+            left: 80px;
+        }
+        #frame{width: 600px;}
+        .blurEffect {
+            text-shadow : 3px 3px 5px rgb(15, 196, 236);
+        }
+        section{
+            width:90%;
+            height:650px;
+            margin-left: 70px;
+            margin-top: 40px;
+            background-color: aliceblue;
+        }
+        #round1 {border-radius : 30px;}
+        #table{
+            float: right; 
+            margin-right: 90px;
+            margin-top:60px; 
+            width: 300px;
+        }
+        h3, li {
+            color : rgb(78, 31, 101);
+        }
+         div > div > strong {
+            background : rgb(200, 245, 144);
+        }
+        .warning {
+            color : red;
+        }
+        body.main { 
+            background : aliceblue; 
+        }
+        #list { 
+            background : mistyrose;
+            font-size:20px;
+        }
+        li:hover { 
+            background : rgb(31, 227, 217,0.5);
+            cursor: pointer;
+            
+        }
+        table {
+            float: left; 
+        }
+        aside{
+            position: relative;
+            left: 1350px;
+            bottom:600px;
+        }
+    </style>
+    <script>
+         function changeWarning(message) {
+            document.getElementById('warning').innerText = message;
+        }
+
+        
+        function resetWarning() {
+            document.getElementById('warning').innerText = '맛도리 햄버거는?';
+        }
+    </script>
+
+</head>
+<body>
+    <header>
+        <h1 class="blurEffect">Vacation</h1>
+    </header>
+    <section id="round1">
+        <article>
+            <table style ="margin-left:80px; margin-top:20px;">
+                <thead>
+                    <tr>
+                         <th><h2>California</h2></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="Images/yosemite.jpg" width="200"></td>
+                        <td><img src="Images/innout.jpg" width="200"></td>
+                        <td><img src="Images/park.jpg" width="200"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th><img src="Images/sjsu.jpg" width="200"></th>
+                        <th><img src="Images/sosalito.jpg"width="200"></th>
+                        <th><img src="Images/google.jpg"width="200" height="250"></th>
+                    </tr>
+                </tfoot>
+            </table>    
+        </article>
+        <article>
+            <div id="table">
+                <h2><b>The Best Hamburger!!</b></h2>
+                <div>가장 <strong>맛있었던</strong>햄버거는?</div>
+                    <ul id="list">
+                    <li onmouseover="changeWarning('IN-N-OUT: 한국 프랭크버거+아일랜드 드레싱')" onmouseout="resetWarning()">IN-N-OUT</li>
+                    <li onmouseover="changeWarning('Chick Fil A: 신선 & 빵이 정말 맛있음!!')" onmouseout="resetWarning()">Chick Fil A</li>
+                    <li onmouseover="changeWarning('FiveGuys: 한국 버거킹과 비슷,, 음료 굳!')" onmouseout="resetWarning()">FiveGuys</li>
+                    <li onmouseover="changeWarning('HabitBurger:사이드는 그린빈프라이!')" onmouseout="resetWarning()">HabitBurger</li>
+                    </ul>
+                    <div id="warning" class="warning">맛도리 햄버거는?</div>
+            </div>
+        </article>
+    </section>
+    <aside>
+       <form>
+        <button type="button">
+            <a href="main_Example_01.html" target="_blank"><img src="Images/button.png" width="40"></a>
+            </button>
+       </form>
+    </aside>
+</body>
+</html>
